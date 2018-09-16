@@ -42,7 +42,7 @@ run this command for init table in your project
 ### 2 - Init Routes
 put this routes in **web.php**
 ```
-Route::get('/','SearchController');
+Route::get('/','SearchController@index');
 Route::get('/search','SearchController@search')->name('search.result');
 ```
 ### 3 - Init Controllers
@@ -55,6 +55,7 @@ then put this code on **SearchController**
 <?php
 
 namespace App\Http\Controllers;
+use Search;
 
 use App\File;
 use Illuminate\Http\Request;
