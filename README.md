@@ -22,3 +22,61 @@ In order to use the **Search** facade, you need to register it on the **config/a
     'Search' => Search\SearchFacade::class,
     ],
 ```
+### 4 - Configuration
+In your terminal type
+```
+  php artisan vendor:publish
+```
+or
+```
+ php artisan vendor:publish --provider="Search\SearchProvider"
+
+```
+## Usage
+### 1 - Database(Migration)
+run this command for init table in your project
+```
+ php artisan migrate
+
+```
+### 2 - Init Routes
+put this routes in **web.php**
+```
+Route::get('/','SearchController');
+Route::get('/search','SearchController@search')->name('search.result');
+```
+### 3 - Init Controllers
+run this command for create controller
+```
+php artisan make:controller SearchController
+```
+then put this code on **SearchController**
+```
+<?php
+
+namespace App\Http\Controllers;
+
+use App\File;
+use Illuminate\Http\Request;
+
+class SearchController extends Controller
+{
+    public function index()
+    {
+        return Search::setViewSearch();
+
+    }
+
+    public function search()
+    {
+        return Search::setResultSearch();
+
+    }
+}
+```
+### Note! because we were used laravel authentication,you must run this command for adding this feature to your project
+```
+ php artisan make:auth
+
+```
+### Note! For insert data in your table(files),you can use phpmyadmin or data fake generator laravel(factory)
