@@ -81,3 +81,7 @@ class SearchController extends Controller
 
 ```
 ### Note! For insert data in your table(files),you can use phpmyadmin or data fake generator laravel(factory)
+### Note! For insert data in your table(files),attentive to this pattern
+* price==free
+* price > 0
+
