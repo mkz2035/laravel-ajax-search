@@ -1,0 +1,15 @@
+{
+    "name": "mostafa_kz/ajax_search_for_laravel",
+    "authors": [
+        {
+            "name": "mostafa.karimzadeh",
+            "email": "behnam.kz.2015@gmail.com"
+        }
+    ],
+"autoload":{
+  "psr-4":{
+      "Search\\" : "src/"
+  }
+},
+    "require": {}
+}
